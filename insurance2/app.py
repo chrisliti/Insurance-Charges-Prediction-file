@@ -8,6 +8,7 @@ st.title("Medical Insurance Batch File Prediction")
 ## Load sample file
 sample_file = pd.read_csv('sample_file.csv')
 
+st.header("Overview")
 st.markdown("This web app runs a ML algorithm on an input csv and returns the uploaded file with predicted medical expenses per customer appended as the last feature/column. The input file should be formatted as the sample below.")
 st.dataframe(sample_file)
 
@@ -15,6 +16,8 @@ st.dataframe(sample_file)
 #filename = 'random_forest_regressor_model.sav'
 model = pickle.load(open('rf-model.pkl', 'rb'))
 
+st.header("Upload Custom File")
+St.markdown("Upload your custom file for prediction here"))
 ## Load Dataset
 
 pred_df = st.file_uploader("upload file", type={"csv", "txt"})
@@ -42,7 +45,7 @@ def make_predictions():
 
   return pred_df
 
-st.header("Upload Custom File")
+
 if st.button('predict'):
     predicted_file = make_predictions()
     st.dataframe(predicted_file)
