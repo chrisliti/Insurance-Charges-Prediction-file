@@ -62,7 +62,7 @@ if st.button('predict'):
     final_data = convert_df()
 
     st.download_button(
-      label="Download data with predictions as CSV",
+      label="Download data as CSV",
       data=final_data,
       file_name='final.csv',
       mime='text/csv')
