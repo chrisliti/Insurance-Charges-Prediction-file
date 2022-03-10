@@ -54,6 +54,19 @@ if st.button('predict'):
 
     cohort_number = len(predicted_file)
 
+    @st.cache
+    def convert_df():
+      # IMPORTANT: Cache the conversion to prevent computation on every rerun
+      return predicted_file.to_csv().encode('utf-8')
+
+    final_data = convert_df()
+
+    st.download_button(
+      label="Download data as CSV",
+      data=final_data,
+      file_name='final.csv',
+      mime='text/csv')
+
     st.markdown('')
 
     st.markdown('The predicted total expense for this cohort of {} customers is ${}'.format(cohort_number,total_expense))
