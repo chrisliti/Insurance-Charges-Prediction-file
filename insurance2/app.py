@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 
-st.tile("Medical Insurance Batch File Prediction")
+st.title("Medical Insurance Batch File Prediction")
 
 ## Load sample file
 sample_file = pd.read_csv('sample_file.csv')
