@@ -9,9 +9,9 @@ model = pickle.load(open('rf-model.pkl', 'rb'))
 
 ## Load Dataset
 
-file_upload = st.file_uploader("upload file", type={"csv", "txt"})
-if file_upload is not None:
-    pred_df = pd.read_csv(file_upload)
+pred_df = st.file_uploader("upload file", type={"csv", "txt"})
+if pred_df is not None:
+    pred_df = pd.read_csv(pred_df)
 
 ## Main function
 
@@ -35,7 +35,7 @@ def make_predictions():
 
 if st.button('predict'):
     predicted_file = make_predictions()
-    st.write(predicted_file.head())
+    st.dataframe(predicted_file)
 
 
 
