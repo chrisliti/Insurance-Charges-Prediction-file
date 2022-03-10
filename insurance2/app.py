@@ -42,7 +42,7 @@ def make_predictions():
 
   return pred_df
 
-
+st.header("Upload Custom File")
 if st.button('predict'):
     predicted_file = make_predictions()
     st.dataframe(predicted_file)
