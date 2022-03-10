@@ -38,6 +38,11 @@ def make_predictions():
 if st.button('predict'):
     predicted_file = make_predictions()
     st.dataframe(predicted_file)
+    
+    total_expense = round(predicted_file['predicted_expense'].sum(),2)
+
+    st.markdown('The predicted total expense for this cohort is {}'.format(total_expense))
+
 
 
 
