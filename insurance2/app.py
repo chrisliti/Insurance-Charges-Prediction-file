@@ -32,6 +32,8 @@ def make_predictions():
 
   pred_df.loc[:,'predicted_expense'] = predictions
 
+  return pred_df
+
 
 if st.button('predict'):
     predicted_file = make_predictions()
