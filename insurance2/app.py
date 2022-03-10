@@ -17,7 +17,7 @@ st.dataframe(sample_file)
 model = pickle.load(open('rf-model.pkl', 'rb'))
 
 st.header("Upload Custom File")
-St.markdown("Upload your custom file for prediction here"))
+St.markdown("Upload your custom file for prediction below"))
 ## Load Dataset
 
 pred_df = st.file_uploader("upload file", type={"csv", "txt"})
