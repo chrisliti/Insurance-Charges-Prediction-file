@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import sqlalchemy
+from sqlalchemy import create_engine
 
 st.title("Medical Insurance Batch File Prediction")
 
@@ -68,8 +70,14 @@ if st.button('predict'):
       mime='text/csv')
 
     st.markdown('')
+   
 
     st.markdown('The predicted total expense for this cohort of {} customers is ${}'.format(cohort_number,total_expense))
+    
+    ## Write predictions to db
+    engine = create_engine('postgresql://postgres:Cml.9283.1010@localhost:5432/DSI')
+    
+    final_data.to_sql('predictions', engine, if_exists='append',index=False)
 
 
 
