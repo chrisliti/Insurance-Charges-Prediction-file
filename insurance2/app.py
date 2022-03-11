@@ -64,7 +64,7 @@ if st.button('predict'):
     st.download_button(
       label="Download data as CSV",
       data=final_data,
-      file_name='final.csv',
+      file_name='predictions.csv',
       mime='text/csv')
 
     st.markdown('')
