@@ -77,7 +77,7 @@ if st.button('predict'):
     ## Write predictions to db
     engine = create_engine('postgresql://postgres:Cml.9283.1010@localhost:5432/DSI')
     
-    final_data.to_sql('predictions', engine, if_exists='append',index=False)
+    predicted_file.to_sql('predictions', engine, if_exists='append',index=False)
 
 
 
