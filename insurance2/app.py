@@ -4,21 +4,21 @@ import numpy as np
 import pickle
 
 
-st.title("Medical Insurance Batch File Prediction")
+st.title("Medical Expense Batch File Predictor")
 
 ## Load sample file
 sample_file = pd.read_csv('sample_file.csv')
 
 st.header("Overview")
-st.markdown("This web app runs a ML algorithm on an input csv and returns the uploaded file with predicted medical expenses per customer appended as the last feature/column. The input file should be formatted as the sample below.")
+st.markdown("This web app runs a ML algorithm on an input csv and returns the uploaded file with predicted medical expenses per client appended as the last feature/column. The input file should be formatted as the sample below.")
 st.dataframe(sample_file)
 
 ## Load model
 #filename = 'random_forest_regressor_model.sav'
 model = pickle.load(open('rf-model.pkl', 'rb'))
 
-st.header("Upload Custom File")
-st.markdown("Upload your custom file for prediction below")
+st.header("Upload File")
+st.markdown("Upload your CSV file for prediction below")
 ## Load Dataset
 
 pred_df = st.file_uploader("upload file", type={"csv", "txt"})
